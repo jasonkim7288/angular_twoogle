@@ -5,9 +5,30 @@
       [opened]="(isHandset$ | async) === false">
     <mat-toolbar>Menu</mat-toolbar>
     <mat-nav-list>
-      <a mat-list-item href="#">Link 1</a>
-      <a mat-list-item href="#">Link 2</a>
-      <a mat-list-item href="#">Link 3</a>
+      <a mat-list-item href="#">
+        <div class="menu-icon">
+          <i class="fas fa-home"></i>
+        </div>
+        Home
+      </a>
+      <a mat-list-item href="#">
+        <div class="menu-icon">
+          <i class="fas fa-user"></i>
+        </div>
+        Profile
+      </a>
+      <a mat-list-item href="#">
+        <div class="menu-icon">
+          <i class="fab fa-twitter"></i>
+        </div>
+        Twoogle
+      </a>
+      <div mat-list-item (click)="auth.signOut()">
+        <div class="menu-icon">
+          <i class="fas fa-sign-out-alt"></i>
+        </div>
+        Log out
+      </div>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
@@ -18,9 +39,8 @@
         mat-icon-button
         (click)="drawer.toggle()"
         *ngIf="isHandset$ | async">
-        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
-      <span>twoogle</span>
+      <span>Wanna Twoogle?</span>
     </mat-toolbar>
     <!-- Add Content Here -->
   </mat-sidenav-content>
