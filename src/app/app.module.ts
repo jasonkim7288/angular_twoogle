@@ -5,10 +5,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MainNavComponent } from './main-nav/main-nav.component';
+import { MainNavComponent } from './components/main-nav/main-nav.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MaterialModule } from './material/material.module';
-import { LoginComponent } from './login/login.component';
+import { LoginComponent } from './components/login/login.component';
+import { TwootsComponent } from './components/twoots/twoots.component';
 
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
@@ -30,7 +31,8 @@ const config = {
   declarations: [
     AppComponent,
     MainNavComponent,
-    LoginComponent
+    LoginComponent,
+    TwootsComponent
   ],
   imports: [
     BrowserModule,
