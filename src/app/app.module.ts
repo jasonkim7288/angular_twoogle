@@ -12,6 +12,7 @@ import { LoginComponent } from './login/login.component';
 
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 
 const config = {
@@ -39,6 +40,7 @@ const config = {
     MaterialModule,
     AngularFireModule.initializeApp(config),
     AngularFirestoreModule,
+    AngularFireDatabaseModule,
     AngularFireAuthModule,
   ],
   providers: [],
