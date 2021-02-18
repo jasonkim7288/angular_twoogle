@@ -15,6 +15,9 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { AngularFireAuthModule } from '@angular/fire/auth';
+import { NewTwootComponent } from './components/new-twoot/new-twoot.component';
+import { TwootComponent } from './components/twoot/twoot.component';
+import { ProfileComponent } from './components/profile/profile.component';
 
 const config = {
   apiKey: environment.firebaseApiKey,
@@ -32,7 +35,10 @@ const config = {
     AppComponent,
     MainNavComponent,
     LoginComponent,
-    TwootsComponent
+    TwootsComponent,
+    NewTwootComponent,
+    TwootComponent,
+    ProfileComponent,
   ],
   imports: [
     BrowserModule,
