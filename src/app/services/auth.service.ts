@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import firebase from 'firebase/app';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
+import { AngularFireDatabase } from '@angular/fire/database';
 
 import { Observable, of } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
@@ -16,10 +17,12 @@ import Utils from '../utils/string_util';
 })
 export class AuthService {
   user$: Observable<User | null | undefined> = new Observable();
+
   constructor(
     private afAuth: AngularFireAuth,
     private afs: AngularFirestore,
-    private router: Router
+    private router: Router,
+    private db: AngularFireDatabase
   ) {
     this.user$ = this.afAuth.authState.pipe(
       switchMap(user => {
@@ -56,5 +59,9 @@ export class AuthService {
     };
 
     return userRef.set(data, { merge: true });
+  }
+
+  getUsers(): Observable<any[]> {
+    return this.db.list('/users').valueChanges();
   }
 }

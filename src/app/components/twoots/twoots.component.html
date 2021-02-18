@@ -1,2 +1,5 @@
-<p>twoots works!</p>
-<p *ngFor="let twoot of twoots">{{twoot.msg}}</p>
+<app-twoot
+  *ngFor="let twoot of twoots"
+  [paramTwoot]="twoot"
+>
+</app-twoot>

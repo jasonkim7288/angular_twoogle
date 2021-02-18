@@ -1,9 +1,9 @@
-<div *ngIf="auth.user$ | async as user; else login">
+<!-- <div *ngIf="auth.user$ | async as user; else login"> -->
   <app-main-nav>
-    {{ user | json }}
+    <!-- {{ user | json }} -->
     <router-outlet></router-outlet>
   </app-main-nav>
-</div>
+<!-- </div> -->
 
 <ng-template #login>
   <app-login></app-login>
