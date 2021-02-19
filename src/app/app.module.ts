@@ -10,14 +10,19 @@ import { LayoutModule } from '@angular/cdk/layout';
 import { MaterialModule } from './material/material.module';
 import { LoginComponent } from './components/login/login.component';
 import { TwootsComponent } from './components/twoots/twoots.component';
+import { NewTwootComponent } from './components/new-twoot/new-twoot.component';
+import { TwootComponent } from './components/twoot/twoot.component';
+import { ProfileComponent } from './components/profile/profile.component';
 
+// Firebase
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { AngularFireAuthModule } from '@angular/fire/auth';
-import { NewTwootComponent } from './components/new-twoot/new-twoot.component';
-import { TwootComponent } from './components/twoot/twoot.component';
-import { ProfileComponent } from './components/profile/profile.component';
+
+// Global state management
+import { StoreModule } from '@ngrx/store';
+import { twootsReducer } from './config/twoots.reducer';
 
 const config = {
   apiKey: environment.firebaseApiKey,
@@ -50,6 +55,7 @@ const config = {
     AngularFirestoreModule,
     AngularFireDatabaseModule,
     AngularFireAuthModule,
+    StoreModule.forRoot({ twoots: twootsReducer })
   ],
   providers: [],
   bootstrap: [AppComponent]

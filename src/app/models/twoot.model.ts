@@ -1,7 +1,7 @@
-export class Twoot {
-  userId: string = '';
-  msg: string = '';
-  likeCount: number = 0;
-  commentCount: number = 0;
-  createdAt: string = '';
+export interface Twoot {
+  userId: string;
+  msg: string;
+  likeCount: number;
+  commentCount: number;
+  createdAt: string;
 }
