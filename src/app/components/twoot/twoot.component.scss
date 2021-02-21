@@ -4,3 +4,46 @@ mat-card {
   padding: 15px;
   max-width: 800px;
 }
+
+.box {
+  margin-top: -1px;
+  border: '1px solid #766e61';
+  padding: '15px';
+  max-width: '800px';
+}
+
+.photo {
+  border-radius: '50%';
+  width: '53px';
+}
+
+.details {
+  width: '100%';
+}
+
+.fullName {
+  font-size: '1.3em';
+  font-weight: '700';
+}
+
+.userName {
+  font-family: 'Arial';
+  font-weight: 100;
+  color: '#7d7a73';
+}
+
+.msg {
+  font-size: '1.3em';
+  font-weight: '100';
+  white-space: 'pre-line';
+}
+
+.msgForShow {
+  font-size: '1.9em';
+  font-weight: '100';
+  white-space: 'pre-line';
+}
+
+.heart {
+  color: 'red';
+}

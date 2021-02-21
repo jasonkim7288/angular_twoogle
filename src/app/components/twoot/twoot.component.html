@@ -1,5 +1,8 @@
-<mat-card>
-  <div class="box">
-    {{ paramTwoot.msg}}
-  </div>
-</mat-card>
+<div *ngIf="paramTwootId && users">
+  <mat-card>
+    <div class="box">
+      twoot {{ twoots[paramTwootId] }}
+      <img [src]="getUser(twoots[paramTwootId].userId).photo" alt="User" class="photo">
+    </div>
+  </mat-card>
+</div>

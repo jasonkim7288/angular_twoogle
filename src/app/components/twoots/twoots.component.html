@@ -1,5 +1,8 @@
-<app-twoot
-  *ngFor="let twoot of twoots | async"
-  [paramTwoot]="twoot"
->
-</app-twoot>
+<div *ngIf="twoots">
+  <app-twoot
+    *ngFor="let twootId of twootsKeys"
+    [paramTwootId]="twootId"
+    [linkNeeded]="true"
+    >
+  </app-twoot>
+</div>

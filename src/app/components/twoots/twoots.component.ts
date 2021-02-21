@@ -6,10 +6,9 @@ import { UsersService } from '../../services/users.service';
 
 import { Store } from '@ngrx/store';
 import * as TwootsActions from '../../config/twoots.actions'
-import * as UsersActions from '../../config/users.actions'
 import { Twoot } from '../../models/twoot.model';
+import * as UsersActions from '../../config/users.actions'
 import { User } from '../../models/user.model';
-
 
 @Component({
   selector: 'app-twoots',
@@ -19,6 +18,7 @@ import { User } from '../../models/user.model';
 export class TwootsComponent implements OnInit {
   twoots: Observable<Twoot[]>;
   users: Observable<User[]>;
+  twootsKeys: string[];
 
   constructor(
     private twootsService: TwootsService,
@@ -36,6 +36,9 @@ export class TwootsComponent implements OnInit {
       this.store.dispatch(new TwootsActions.SetTwoots(twoots));
       console.log('twoots:', twoots);
       this.twoots = this.store.select('twoots');
+      this.twoots.subscribe(twoots => {
+        this.twootsKeys = Object.keys(twoots);
+      })
     });
   }
 }
