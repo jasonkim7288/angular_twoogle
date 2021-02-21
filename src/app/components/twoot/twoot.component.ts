@@ -7,7 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./twoot.component.scss']
 })
 export class TwootComponent implements OnInit {
-  @Input() paramTwoot: Twoot = new Twoot();
+  @Input() paramTwoot: Twoot;
   constructor() { }
 
   ngOnInit(): void {

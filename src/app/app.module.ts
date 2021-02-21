@@ -23,6 +23,7 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 // Global state management
 import { StoreModule } from '@ngrx/store';
 import { twootsReducer } from './config/twoots.reducer';
+import { usersReducer } from './config/users.reducer';
 
 const config = {
   apiKey: environment.firebaseApiKey,
@@ -55,7 +56,10 @@ const config = {
     AngularFirestoreModule,
     AngularFireDatabaseModule,
     AngularFireAuthModule,
-    StoreModule.forRoot({ twoots: twootsReducer })
+    StoreModule.forRoot({
+      twoots: twootsReducer,
+      users: usersReducer
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

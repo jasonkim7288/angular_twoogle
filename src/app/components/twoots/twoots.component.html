@@ -1,5 +1,5 @@
 <app-twoot
-  *ngFor="let twoot of twoots"
+  *ngFor="let twoot of twoots | async"
   [paramTwoot]="twoot"
 >
 </app-twoot>
